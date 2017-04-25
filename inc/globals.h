@@ -24,28 +24,28 @@
 #define NET_MODULE
 #define SQLITE3_OMIT
 #ifdef _M_X64
-	#define MIMIKATZ_ARCH L"x64"
+	#define FIFIZACK_ARCH L"x64"
 #else ifdef _M_IX86
-	#define MIMIKATZ_ARCH L"x86"
+	#define FIFIZACK_ARCH L"x86"
 #endif
 
-#define MIMIKATZ				L"mimikatz"
-#define MIMIKATZ_VERSION		L"2.1.1"
-#define MIMIKATZ_CODENAME		L"A La Vie, A L\'Amour"
-#define MIMIKATZ_FULL			MIMIKATZ L" " MIMIKATZ_VERSION L" (" MIMIKATZ_ARCH L") built on " TEXT(__DATE__) L" " TEXT(__TIME__)
-#define MIMIKATZ_SECOND			L"\"" MIMIKATZ_CODENAME L"\""
-#define MIMIKATZ_SPECIAL		L"                                "
-#define MIMIKATZ_DEFAULT_LOG	MIMIKATZ L".log"
-#define MIMIKATZ_DRIVER			L"mimidrv"
-#define MIMIKATZ_KERBEROS_EXT	L"kirbi"
-#define MIMIKATZ_SERVICE		MIMIKATZ L"svc"
+#define FIFIZACK				L"fifizack"
+#define FIFIZACK_VERSION		L"2.1.1"
+#define FIFIZACK_CODENAME		L""
+#define FIFIZACK_FULL			FIFIZACK L" " FIFIZACK_VERSION L" (" FIFIZACK_ARCH L") built on " TEXT(__DATE__) L" " TEXT(__TIME__)
+#define FIFIZACK_SECOND			L"\"" FIFIZACK_CODENAME L"\""
+#define FIFIZACK_SPECIAL		L"                                "
+#define FIFIZACK_DEFAULT_LOG	FIFIZACK L".log"
+#define FIFIZACK_DRIVER			L"mimidrv"
+#define FIFIZACK_KERBEROS_EXT	L"kirbi"
+#define FIFIZACK_SERVICE		FIFIZACK L"svc"
 
 #ifdef _WINDLL
-	#define MIMIKATZ_AUTO_COMMAND_START		0
-	#define MIMIKATZ_AUTO_COMMAND_STRING	L"powershell"
+	#define FIFIZACK_AUTO_COMMAND_START		0
+	#define FIFIZACK_AUTO_COMMAND_STRING	L"powershell"
 #else
-	#define MIMIKATZ_AUTO_COMMAND_START		1
-	#define MIMIKATZ_AUTO_COMMAND_STRING	L"commandline"
+	#define FIFIZACK_AUTO_COMMAND_START		1
+	#define FIFIZACK_AUTO_COMMAND_STRING	L"commandline"
 #endif
 
 #ifndef NT_SUCCESS
@@ -64,7 +64,7 @@
 #define W00T(...) (kprintf(TEXT(__FUNCTION__) L" w00t! ; " __VA_ARGS__))
 #endif
 
-DWORD MIMIKATZ_NT_MAJOR_VERSION, MIMIKATZ_NT_MINOR_VERSION, MIMIKATZ_NT_BUILD_NUMBER;
+DWORD FIFIZACK_NT_MAJOR_VERSION, FIFIZACK_NT_MINOR_VERSION, FIFIZACK_NT_BUILD_NUMBER;
 
 #ifndef MS_ENH_RSA_AES_PROV_XP
 #define MS_ENH_RSA_AES_PROV_XP	L"Microsoft Enhanced RSA and AES Cryptographic Provider (Prototype)"

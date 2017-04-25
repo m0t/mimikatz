@@ -17,16 +17,16 @@
 #include <stdio.h>
 
 #ifdef _M_X64
-	#define MIMIKATZ_ARCH_A "x64"
+	#define FIFIZACK_ARCH_A "x64"
 #else ifdef _M_IX86
-	#define MIMIKATZ_ARCH_A "x86"
+	#define FIFIZACK_ARCH_A "x86"
 #endif
 
-#define MIMIKATZ_A				"mimikatz"
-#define MIMIKATZ_VERSION_A		"2.1 alpha"
-#define MIMIKATZ_CODENAME_A		"A La Vie, A L\'Amour"
-#define MIMIKATZ_FULL_A			MIMIKATZ_A " " MIMIKATZ_VERSION_A " (" MIMIKATZ_ARCH_A ") built on " __DATE__ " " __TIME__
-#define MIMIKATZ_SECOND_A		"\"" MIMIKATZ_CODENAME_A "\""
+#define FIFIZACK_A				"mimikatz"
+#define FIFIZACK_VERSION_A		"2.1 alpha"
+#define FIFIZACK_CODENAME_A		"A La Vie, A L\'Amour"
+#define FIFIZACK_FULL_A			FIFIZACK_A " " FIFIZACK_VERSION_A " (" FIFIZACK_ARCH_A ") built on " __DATE__ " " __TIME__
+#define FIFIZACK_SECOND_A		"\"" FIFIZACK_CODENAME_A "\""
 
 #ifndef NT_SUCCESS
 #define NT_SUCCESS(Status) ((NTSTATUS)(Status) >= 0)

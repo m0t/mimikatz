@@ -54,7 +54,7 @@ NTSTATUS kuhl_m_sekurlsa_nt5_init()
 				sMemory.kull_m_memoryRange.kull_m_memoryAdress = vbInfos.DllBase;
 				sMemory.kull_m_memoryRange.size = vbInfos.SizeOfImage;
 				#ifdef _M_IX86
-				isOld = (MIMIKATZ_NT_BUILD_NUMBER >= KULL_M_WIN_BUILD_2K3) && (vbInfos.TimeDateStamp < KUHL_M_SEKURLSA_NT5_SP2_MIN_TIMESTAMP);
+				isOld = (FIFIZACK_NT_BUILD_NUMBER >= KULL_M_WIN_BUILD_2K3) && (vbInfos.TimeDateStamp < KUHL_M_SEKURLSA_NT5_SP2_MIN_TIMESTAMP);
 				#endif
 
 				if(!kuhl_m_sekurlsa_nt5_pLsaUnprotectMemory)

